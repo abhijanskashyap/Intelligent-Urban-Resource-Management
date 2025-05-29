@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Predictions</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/eda">Exploratory Data Analysis</a></li>
+            <li><a href="/predictions">Predictions</a></li>
+            <li><a href="/detect_anomalies">Anomaly Detection</a></li>
+            <li><a href="/infographic">Infographic</a></li> </ul>
+    </nav>
+    <div class="container">
+        <section>
+            <h2>Electricity Usage Prediction</h2>
+            <h3>Model Evaluation Results:</h3>
+            <div class="results">
+                <p>R² Score: {{ electricity_results.r2_score }}</p>
+                <p>MSE: {{ electricity_results.mse }}</p>
+            </div>
+
+            <h3>Make a Prediction:</h3>
+            <form id="electricityPredictForm">
+                <div class="form-group">
+                    <label for="hour">Hour (0-23):</label>
+                    <input type="number" id="hour" name="hour" min="0" max="23" required>
+                </div>
+                <div class="form-group">
+                    <label for="dayofweek">Day of Week (0=Mon, 6=Sun):</label>
+                    <input type="number" id="dayofweek" name="dayofweek" min="0" max="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="month">Month (1-12):</label>
+                    <input type="number" id="month" name="month" min="1" max="12" required>
+                </div>
+                <div class="form-group">
+                    <label for="water_consumption">Water Consumption (Liters):</label>
+                    <input type="number" id="water_consumption" name="water_consumption" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="traffic_density">Traffic Density (Vehicles/Min):</label>
+                    <input type="number" id="traffic_density" name="traffic_density" required>
+                </div>
+                <div class="form-group">
+                    <label for="waste_level">Waste Level (%):</label>
+                    <input type="number" id="waste_level" name="waste_level" step="0.01" required>
+                </div>
+                <button type="submit" class="button">Predict Electricity Usage</button>
+            </form>
+            <div id="electricityPredictionResult" class="results" style="margin-top: 15px;"></div>
+        </section>
+
+        <section>
+            <h2>Event/Anomaly Classification</h2>
+            <h3>Model Evaluation Report:</h3>
+            <div class="results">
+                {% if event_classification_results %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Precision</th>
+                                <th>Recall</th>
+                                <th>F1-Score</th>
+                                <th>Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for class_name, metrics in event_classification_results.items() %}
+                                {% if class_name not in ['accuracy', 'macro avg', 'weighted avg'] %}
+                                <tr>
+                                    <td>{{ class_name }}</td>
+                                    <td>{{ '%.2f' % metrics.precision }}</td>
+                                    <td>{{ '%.2f' % metrics.recall }}</td>
+                                    <td>{{ '%.2f' % metrics['f1-score'] }}</td>
+                                    <td>{{ metrics.support }}</td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                            <tr>
+                                <td><b>Accuracy</b></td>
+                                <td colspan="3"></td>
+                                <td><b>{{ '%.2f' % event_classification_results.accuracy }}</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>Macro Avg</b></td>
+                                <td>{{ '%.2f' % event_classification_results['macro avg'].precision }}</td>
+                                <td>{{ '%.2f' % event_classification_results['macro avg'].recall }}</td>
+                                <td>{{ '%.2f' % event_classification_results['macro avg']['f1-score'] }}</td>
+                                <td>{{ event_classification_results['macro avg'].support }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Weighted Avg</b></td>
+                                <td>{{ '%.2f' % event_classification_results['weighted avg'].precision }}</td>
+                                <td>{{ '%.2f' % event_classification_results['weighted avg'].recall }}</td>
+                                <td>{{ '%.2f' % event_classification_results['weighted avg']['f1-score'] }}</td>
+                                <td>{{ event_classification_results['weighted avg'].support }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No classification report available. Train the model first.</p>
+                {% endif %}
+            </div>
+
+            <h3>Classify an Event:</h3>
+            <form id="eventClassifyForm">
+                <div class="form-group">
+                    <label for="electricity_usage">Electricity Usage (kW):</label>
+                    <input type="number" id="electricity_usage" name="electricity_usage" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="water_consumption_event">Water Consumption (Liters):</label>
+                    <input type="number" id="water_consumption_event" name="water_consumption" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="traffic_density_event">Traffic Density (Vehicles/Min):</label>
+                    <input type="number" id="traffic_density_event" name="traffic_density" required>
+                </div>
+                <div class="form-group">
+                    <label for="waste_level_event">Waste Level (%):</label>
+                    <input type="number" id="waste_level_event" name="waste_level" step="0.01" required>
+                </div>
+                <button type="submit" class="button">Classify Event</button>
+            </form>
+            <div id="eventClassificationResult" class="results" style="margin-top: 15px;"></div>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploratory Data Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Exploratory Data Analysis</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/eda">Exploratory Data Analysis</a></li>
+            <li><a href="/predictions">Predictions</a></li>
+            <li><a href="/detect_anomalies">Anomaly Detection</a></li>
+            <li><a href="/infographic">Infographic</a></li> </ul>
+    </nav>
+    <div class="container">
+        <section>
+            <h2>Data Information</h2>
+            <div class="results">
+                <pre>{{ eda.data_info }}</pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Descriptive Statistics</h2>
+            <div class="results">
+                {{ eda.descriptive_stats | safe }}
+            </div>
+        </section>
+
+        <section>
+            <h2>Missing Values</h2>
+            <div class="results">
+                {{ eda.missing_values | safe }}
+            </div>
+        </section>
+
+        <section>
+            <h2>Visualizations</h2>
+            <div class="image-container">
+                <h3>Electricity and Water Consumption Over Time</h3>
+                <img src="{{ eda.time_series_plot }}" alt="Time Series Usage">
+            </div>
+            <div class="image-container">
+                <h3>Distribution of Traffic Density</h3>
+                <img src="{{ eda.traffic_density_plot }}" alt="Traffic Density Distribution">
+            </div>
+            <div class="image-container">
+                <h3>Boxplot Waste Level (%)</h3>
+                <img src="{{ eda.waste_level_boxplot }}" alt="Waste Level Boxplot">
+            </div>
+            <div class="image-container">
+                <h3>Correlation Between Numerical Features</h3>
+                <img src="{{ eda.correlation_heatmap }}" alt="Correlation Heatmap">
+            </div>
+        </section>
+    </div>
+</body>
+</html>

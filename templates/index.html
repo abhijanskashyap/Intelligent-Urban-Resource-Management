@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Resource Monitoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Intelligent Urban Resource Management (IURM)</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/eda">Exploratory Data Analysis</a></li>
+            <li><a href="/predictions">Predictions</a></li>
+            <li><a href="/detect_anomalies">Anomaly Detection</a></li>
+            <li><a href="/infographic">Infographic</a></li> </ul>
+    </nav>
+    <div class="container">
+        <section>
+            <h2>Welcome to the Urban Resource Monitoring System</h2>
+            <p>This application allows you to monitor, analyze, and predict urban resource consumption and traffic density. It also helps in detecting anomalies in waste levels and classifying events.</p>
+        </section>
+
+        <section>
+            <h2>Data Generation</h2>
+            <p>Click the button below to generate a synthetic dataset for demonstration purposes.</p>
+            <button id="generateDataBtn" class="button">Generate Synthetic Data</button>
+            <div id="dataGenerationStatus" style="margin-top: 10px;"></div>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li><b>Exploratory Data Analysis (EDA):</b> View data information, descriptive statistics, missing values, and various visualizations.</li>
+                <li><b>Electricity Usage Prediction:</b> Predict future electricity consumption based on various parameters.</li>
+                <li><b>Event/Anomaly Classification:</b> Classify different events (e.g., Festival, Power Outage) based on resource usage patterns.</li>
+                <li><b>Waste Level Anomaly Detection:</b> Identify unusual spikes or drops in waste levels.</li>
+            </ul>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

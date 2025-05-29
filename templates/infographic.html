@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Urban Resource Management (IURM) - Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #343A40;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+        .icon-placeholder {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+        .flow-arrow {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 30px;
+            background-color: #0077B6;
+            margin: 5px auto;
+        }
+        .flow-arrow-horizontal {
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background-color: #0077B6;
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem; /* p-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .stat-value {
+            color: #0077B6;
+        }
+        .section-title {
+            color: #0077B6;
+        }
+        /* Chosen Palette: Brilliant Blues & Grays */
+        /* Primary Blue: #0077B6 */
+        /* Secondary Blue: #00B4D8 */
+        /* Light Blue/Accent: #90E0EF */
+        /* Medium Gray: #ADB5BD */
+        /* Dark Gray/Text: #343A40 */
+        /* Light Background: #F8F9FA */
+        /* Card Background: #FFFFFF */
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-[#0077B6] text-white py-12 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Intelligent Urban Resource Management (IURM)</h1>
+            <p class="text-xl md:text-2xl text-[#90E0EF]">Powering Sustainable Cities with AI & IoT</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12 max-w-5xl">
+
+        <section class="mb-12 md:mb-16 text-center">
+            <h2 class="text-3xl font-bold section-title mb-6">The Urban Imperative: A Smarter Future</h2>
+            <p class="text-lg md:text-xl mb-4 text-[#343A40] max-w-3xl mx-auto">
+                Rapid urbanization places immense strain on city resources. IURM leverages cutting-edge technology to transform urban management, fostering efficiency, sustainability, and enhanced quality of life.
+            </p>
+            <div class="text-5xl md:text-6xl font-bold stat-value my-6">
+                >50%
+            </div>
+            <p class="text-md text-[#ADB5BD] -mt-4 mb-8">of the global population lives in urban areas, a figure projected to rise, intensifying resource demands.</p>
+            <p class="text-lg md:text-xl mb-4 text-[#343A40] max-w-3xl mx-auto">
+                Our vision is to create intelligent cities that proactively manage electricity, water, traffic, and waste through a data-driven, AI-powered platform.
+            </p>
+        </section>
+
+        <section class="mb-12 md:mb-16 card">
+            <h2 class="text-3xl font-bold section-title mb-8 text-center">Core Pillars of IURM</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-4">
+                    <div class="icon-placeholder text-[#00B4D8] mb-3">📶</div>
+                    <h3 class="text-xl font-semibold mb-2 text-[#0077B6]">IoT Integration</h3>
+                    <p class="text-sm text-[#343A40]">Real-time data collection from a vast network of sensors across the city.</p>
+                </div>
+                <div class="p-4">
+                    <div class="icon-placeholder text-[#00B4D8] mb-3">💾</div>
+                    <h3 class="text-xl font-semibold mb-2 text-[#0077B6]">Big Data Platform</h3>
+                    <p class="text-sm text-[#343A40]">Scalable infrastructure to store and process massive volumes of urban data.</p>
+                </div>
+                <div class="p-4">
+                    <div class="icon-placeholder text-[#00B4D8] mb-3">🧠</div>
+                    <h3 class="text-xl font-semibold mb-2 text-[#0077B6]">AI-Powered Analytics</h3>
+                    <p class="text-sm text-[#343A40]">Advanced models for prediction, classification, and anomaly detection.</p>
+                </div>
+            </div>
+            <p class="text-center mt-6 text-md text-[#343A40]">These pillars work in synergy to manage key urban resources: ⚡️ Electricity, 💧 Water, 🚗 Traffic, and 🗑️ Waste.</p>
+        </section>
+
+        <section class="mb-12 md:mb-16 text-center">
+            <h2 class="text-3xl font-bold section-title mb-8">From Data to Actionable Insights</h2>
+            <p class="text-lg md:text-xl mb-8 text-[#343A40] max-w-3xl mx-auto">
+                IURM follows a systematic process to transform raw data into intelligent decisions for efficient urban management.
+            </p>
+            <div class="flex flex-col md:flex-row justify-around items-center space-y-6 md:space-y-0 md:space-x-4">
+                <div class="card w-full md:w-1/4 p-6 text-center">
+                    <div class="icon-placeholder text-[#00B4D8] mb-3">📡</div>
+                    <h4 class="text-lg font-semibold text-[#0077B6]">1. Data Collection</h4>
+                    <p class="text-xs text-[#343A40]">IoT sensors gather real-time data on resource usage and urban dynamics.</p>
+                </div>
+                <div class="hidden md:block flow-arrow-horizontal"></div>
+                <div class="md:hidden flow-arrow"></div>
+                <div class="card w-full md:w-1/4 p-6 text-center">
+                    <div class="icon-placeholder text-[#00B4D8] mb-3">⚙️</div>
+                    <h4 class="text-lg font-semibold text-[#0077B6]">2. Data Processing</h4>
+                    <p class="text-xs text-[#343A40]">Data is cleaned, transformed, and analyzed using AI models.</p>
+                </div>
+                <div class="hidden md:block flow-arrow-horizontal"></div>
+                <div class="md:hidden flow-arrow"></div>
+                <div class="card w-full md:w-1/4 p-6 text-center">
+                    <div class="icon-placeholder text-[#00B4D8] mb-3">📊</div>
+                    <h4 class="text-lg font-semibold text-[#0077B6]">3. Actionable Insights</h4>
+                    <p class="text-xs text-[#343A40]">Dashboard provides insights and alerts for authorities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 md:mb-16">
+            <h2 class="text-3xl font-bold section-title mb-8 text-center">AI-Powered Decision Making: Prototype in Action</h2>
+            <p class="text-lg md:text-xl mb-8 text-[#343A40] max-w-3xl mx-auto text-center">
+                The IURM prototype showcases intelligent models that drive efficiency and foresight in resource management.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card text-center">
+                    <h3 class="text-xl font-semibold text-[#0077B6] mb-3">Electricity Prediction</h3>
+                    <p class="text-5xl font-bold stat-value mb-3" id="electricityStat">~85%+</p>
+                    <p class="text-xs text-[#ADB5BD] mb-2">Achieved R² Score in Prototype</p>
+                    <p class="text-sm text-[#343A40]">Linear Regression models forecast energy demand, enabling optimized distribution and proactive load management.</p>
+                </div>
+                <div class="card text-center">
+                    <h3 class="text-xl font-semibold text-[#0077B6] mb-3">Event Classification</h3>
+                    <p class="text-5xl font-bold stat-value mb-3" id="eventStat">90%+</p>
+                    <p class="text-xs text-[#ADB5BD] mb-2">Accuracy for Critical Events (Prototype)</p>
+                    <p class="text-sm text-[#343A40]">Random Forest classifier identifies and categorizes events like 'Power Outages' or 'Festivals' from resource patterns.</p>
+                </div>
+                <div class="card text-center">
+                    <h3 class="text-xl font-semibold text-[#0077B6] mb-3">Waste Anomaly Detection</h3>
+                    <p class="text-5xl font-bold stat-value mb-3" id="wasteStat">10+</p>
+                    <p class="text-xs text-[#ADB5BD] mb-2">Anomalies Detectable for Optimized Collection</p>
+                    <p class="text-sm text-[#343A40]">IQR method flags unusual waste levels, paving the way for dynamic and efficient collection routes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 md:mb-16">
+            <h2 class="text-3xl font-bold section-title mb-8 text-center">Building a Sustainable Future: Projected Benefits</h2>
+             <p class="text-lg md:text-xl mb-8 text-[#343A40] max-w-3xl mx-auto text-center">
+                Full-scale IURM implementation promises substantial improvements in urban living and municipal operations.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card text-center flex flex-col justify-between">
+                    <div>
+                        <div class="icon-placeholder text-[#00B4D8] mb-3">💧⚡️</div>
+                        <h3 class="text-lg font-semibold text-[#0077B6] mb-2">Reduced Resource Wastage</h3>
+                        <p class="text-4xl font-bold stat-value my-2">15%</p>
+                        <p class="text-xs text-[#ADB5BD] mb-2">Projected Reduction</p>
+                        <p class="text-sm text-[#343A40] mb-4">Optimized consumption patterns and early leak/anomaly detection for water and electricity.</p>
+                    </div>
+                    <div class="chart-container mx-auto" style="height: 200px; max-height:200px; max-width:200px;">
+                        <canvas id="resourceWastageChart"></canvas>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="icon-placeholder text-[#00B4D8] mb-3">🚗💨</div>
+                    <h3 class="text-lg font-semibold text-[#0077B6] mb-2">Improved Traffic Flow</h3>
+                    <p class="text-4xl font-bold stat-value my-2">20%</p>
+                    <p class="text-xs text-[#ADB5BD] mb-2">Projected Congestion Decrease</p>
+                    <p class="text-sm text-[#343A40]">Predictive analytics for dynamic traffic management and reduced commute times.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="icon-placeholder text-[#00B4D8] mb-3">🗑️♻️</div>
+                    <h3 class="text-lg font-semibold text-[#0077B6] mb-2">Efficient Waste Collection</h3>
+                    <p class="text-4xl font-bold stat-value my-2">25%</p>
+                    <p class="text-xs text-[#ADB5BD] mb-2">Projected Efficiency Gain</p>
+                    <p class="text-sm text-[#343A40]">Smart monitoring of bin levels for optimized routes and timely collection.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="icon-placeholder text-[#00B4D8] mb-3">💰📈</div>
+                    <h3 class="text-lg font-semibold text-[#0077B6] mb-2">Municipal Cost Savings</h3>
+                    <p class="text-4xl font-bold stat-value my-2">$XM</p>
+                    <p class="text-xs text-[#ADB5BD] mb-2">Projected Annual Savings</p>
+                    <p class="text-sm text-[#343A40]">Lower operational overheads through efficient resource allocation and predictive maintenance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 md:mb-16 card">
+            <h2 class="text-3xl font-bold section-title mb-8 text-center">A Flexible Solution for Every City</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center">
+                <div class="md:w-1/2 p-4 text-center md:text-left">
+                     <p class="text-lg text-[#343A40] mb-4">The IURM platform is designed with a modular architecture, ensuring it can be scaled to meet the demands of growing urban centers and customized to the unique needs of different municipalities.</p>
+                     <p class="text-md text-[#343A40]">Whether a megacity or a developing town, IURM provides the tools for intelligent resource management.</p>
+                </div>
+                <div class="md:w-1/2 p-4 flex justify-center items-center space-x-2 mt-6 md:mt-0">
+                    <div class="bg-[#90E0EF] text-[#0077B6] p-4 rounded-lg text-sm font-semibold">City A</div>
+                    <div class="flow-arrow-horizontal !bg-[#00B4D8]"></div>
+                    <div class="bg-[#0077B6] text-white p-6 rounded-lg text-lg font-bold shadow-lg">IURM Platform</div>
+                    <div class="flow-arrow-horizontal !bg-[#00B4D8]"></div>
+                    <div class="bg-[#90E0EF] text-[#0077B6] p-4 rounded-lg text-sm font-semibold">City B</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 md:mb-16 text-center">
+            <h2 class="text-3xl font-bold section-title mb-8">Innovating for Tomorrow's Cities</h2>
+            <p class="text-lg md:text-xl mb-8 text-[#343A40] max-w-3xl mx-auto">
+                The journey doesn't end here. IURM is committed to continuous improvement and the integration of next-generation technologies.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-4 border border-[#ADB5BD] rounded-lg bg-white">
+                    <h4 class="text-lg font-semibold text-[#0077B6] mb-2">Advanced AI Models</h4>
+                    <p class="text-sm text-[#343A40]">Exploring deep learning for enhanced forecasting and computer vision for tasks like automated waste segregation.</p>
+                </div>
+                <div class="p-4 border border-[#ADB5BD] rounded-lg bg-white">
+                    <h4 class="text-lg font-semibold text-[#0077B6] mb-2">Real-time Alerting</h4>
+                    <p class="text-sm text-[#343A40]">Implementing instant notifications for critical anomalies, enabling rapid response from city authorities.</p>
+                </div>
+                <div class="p-4 border border-[#ADB5BD] rounded-lg bg-white">
+                    <h4 class="text-lg font-semibold text-[#0077B6] mb-2">Interactive Geospatial Maps</h4>
+                    <p class="text-sm text-[#343A40]">Integrating mapping services to visualize sensor data, traffic flow, and anomaly hotspots in real-time.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-8 border-t border-[#ADB5BD]">
+            <p class="text-md text-[#343A40]">Intelligent Urban Resource Management (IURM)</p>
+            <p class="text-sm text-[#ADB5BD]">Leading the way in smart, sustainable urban development. &copy; 2025</p>
+        </footer>
+    </main>
+
+    <script>
+        function wrapText(text, maxLength) {
+            if (typeof text !== 'string' || text.length <= maxLength) {
+                return text;
+            }
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        // Chart.js: Resource Wastage Donut Chart
+        const resourceWastageCtx = document.getElementById('resourceWastageChart').getContext('2d');
+        new Chart(resourceWastageCtx, {
+            type: 'doughnut',
+            data: {
+                labels: [wrapText('Projected Resource Savings', 16), wrapText('Current Usage Baseline', 16)],
+                datasets: [{
+                    label: 'Resource Usage',
+                    data: [15, 85], // Projected 15% savings
+                    backgroundColor: [
+                        '#00B4D8', // Secondary Blue for savings
+                        '#90E0EF', // Light Blue/Accent for baseline
+                    ],
+                    borderColor: [
+                        '#FFFFFF',
+                        '#FFFFFF'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 10 },
+                            color: '#343A40',
+                            boxWidth: 15,
+                            padding: 10
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    </script>
+</body>
+</html>

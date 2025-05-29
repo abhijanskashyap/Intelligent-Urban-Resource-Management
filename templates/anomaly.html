@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Anomaly Detection</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/eda">Exploratory Data Analysis</a></li>
+            <li><a href="/predictions">Predictions</a></li>
+            <li><a href="/detect_anomalies">Anomaly Detection</a></li>
+            <li><a href="/infographic">Infographic</a></li> </ul>
+    </nav>
+    <div class="container">
+        <section>
+            <h2>Waste Level Anomaly Detection (IQR Method)</h2>
+            <p>Below are the detected anomalies in Waste Level (%).</p>
+            <div class="results">
+                {% if anomalies %}
+                    {{ anomalies | safe }}
+                {% else %}
+                    <p>No anomalies detected in Waste Level (%).</p>
+                {% endif %}
+            </div>
+            <p>Note: The anomaly detection runs automatically when this page is accessed.</p>
+        </section>
+    </div>
+</body>
+</html>
